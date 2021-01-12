@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="cosmos">
+    Weight on Earth: <input ng-model="weight" type="number"
+    onkeypress="return isNumberKey(event)"/> lbs
+    <table>
+      <caption>Planets</caption>
+      <tr>
+        <td><b>Mercury:</b></td>
+        <td>{{(10*weight*.378)/10}} lbs.</td>
+        <td><b>Venus:</b></td>
+        <td>{{(10*weight*.907)/10}} lbs.</td>
+        <td><b>Earth:</b></td>
+        <td>{{weight}} lbs.</td>
+        <td><b>Mars:</b></td>
+        <td>{{(10*weight*.377)/10}} lbs.</td>
+      </tr>
+      <tr>
+        <td><b>Jupitor:</b></td>
+        <td>{{(10*weight*2.528)/10}} lbs.</td>
+        <td><b>Saturn:</b></td>
+        <td>{{(10*weight*1.064)/10}} lbs.</td>
+        <td><b>Uranus:</b></td>
+        <td>{{(10*weight*.889)/10}} lbs.</td>
+        <td><b>Neptune:</b></td>
+        <td>{{(10*weight*1.125)/10}} lbs.</td>
+      </tr>
+    </table>
+</div>
+<script type="text/javascript">
+function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : evt.keyCode
+    if (charCode > 31 && (charCode != 46 &&(charCode < 48 || charCode > 57)))
+        return false;
+    return true;
+}
+</script>
+<script src="js/app.js" charset="utf-8"></script>
+<script src="js/mainController.js" charset="utf-8"></script>
+</body>
+</html>
